@@ -35,6 +35,15 @@ public class Panel extends JPanel implements ActionListener {
     PlayerTank tank1 = new PlayerTank();
     PlayerTank tank2 = new PlayerTank();
 
+
+    //Временно
+//    PlayerTank tank3 = new PlayerTank();
+//    PlayerTank tank4 = new PlayerTank();
+//    PlayerTank tank5 = new PlayerTank();
+//    PlayerTank tank6 = new PlayerTank();
+//    PlayerTank tank7 = new PlayerTank();
+
+
     public Panel() {
         super();
         setFocusable(true);
@@ -47,9 +56,24 @@ public class Panel extends JPanel implements ActionListener {
         mainTimer.start();
         System.out.println("Timer START");
 
-        tank1.setImg(new ImageIcon("image/pl1.png").getImage());
+        tank1.setImg(new ImageIcon("image/pl2.png").getImage());
+        tank1.setXYAngle(800,250,1.60);
 
         tank2.setImg(new ImageIcon("image/pl1.png").getImage());
+        tank2.setXYAngle(100,50,4.75);
+
+        //Временно
+//        tank3.setImg(new ImageIcon("image/pl1.png").getImage());
+//        tank3.setXYAngle(100,50,4.75);
+//        tank4.setImg(new ImageIcon("image/pl1.png").getImage());
+//        tank4.setXYAngle(100,150,4.75);
+//        tank5.setImg(new ImageIcon("image/pl1.png").getImage());
+//        tank5.setXYAngle(100,250,4.75);
+//
+//        tank6.setImg(new ImageIcon("image/pl1.png").getImage());
+//        tank6.setXYAngle(250,100,4.75);
+//        tank7.setImg(new ImageIcon("image/pl1.png").getImage());
+//        tank7.setXYAngle(250,200,4.75);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -68,6 +92,12 @@ public class Panel extends JPanel implements ActionListener {
 
     private void gameUpdate() {
 
+        WIDTH   = getBounds().width;
+        HEIGHT  = getBounds().height;
+//        Panel.getDefaultLocale().
+
+        //System.out.println("-------------"+);
+
 //        tank1.up = presskeyUp1;
 //        tank1.down = presskeyDown1;
 //        tank1.left = presskeyLeft1;
@@ -79,16 +109,41 @@ public class Panel extends JPanel implements ActionListener {
         tank2.update();
 
 
+        //Временно
+//        tank3.setControl(presskeyUp2,presskeyDown2,presskeyLeft2,presskeyRight2);
+//        tank3.update();
+//        tank4.setControl(presskeyUp2,presskeyDown2,presskeyLeft2,presskeyRight2);
+//        tank4.update();
+//        tank5.setControl(presskeyUp2,presskeyDown2,presskeyLeft2,presskeyRight2);
+//        tank5.update();
+//        tank6.setControl(presskeyUp2,presskeyDown2,presskeyLeft2,presskeyRight2);
+//        tank6.update();
+//        tank7.setControl(presskeyUp2,presskeyDown2,presskeyLeft2,presskeyRight2);
+//        tank7.update();
+
+
 
     }
 
     private void gameRender() {
         back.draw(g);
+
+        tank1.leftPosition = true;
         tank1.draw(g);
         tank2.draw(g);
 
+
+        //Временно
+//        tank3.draw(g);
+//        tank4.draw(g);
+//        tank5.draw(g);
+//        tank6.draw(g);
+//        tank1.rightPosition = true;
+//        tank7.draw(g);
+
+
         Image imge = new ImageIcon("image/krisha.jpg").getImage();
-        g.drawImage(imge,10,10,null);
+        g.drawImage(imge,10,HEIGHT-400,null);
 
 
     }

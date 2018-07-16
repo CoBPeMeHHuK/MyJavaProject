@@ -18,6 +18,8 @@ public class Window {
 
         start.setSize(1000,600);
 
+        //start.getContentPane().getSize().height;
+
         start.add(new Panel());
 
 
